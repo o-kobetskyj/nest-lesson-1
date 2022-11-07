@@ -1,11 +1,30 @@
-import { Controller, Get, Header, HttpCode } from "@nestjs/common";
+import { Controller, Get, Header, HttpCode, Param } from '@nestjs/common';
+import { log } from 'console';
 
-@Controller('test')
-export class TestController {
-@Get('')
-@HttpCode(206)
-@Header("Lesson-1", 'Nest.js' )
-test() {
-    return {result: 'All is/are work', status: 200}
+interface Task {
+    id: number; task: string
 }
-} 
+
+@Controller('task')
+export class TestController {
+  private tasks: Task[] = [
+    { id: 1, task: 'task-1' },
+    { id: 2, task: 'task-2' },
+  ];
+  @Get('')
+  @HttpCode(206)
+  @Header('Lesson-1', 'Nest.js')
+  getTask(): Task[] {
+    return this.tasks;
+  }
+
+  @Get(':id')
+  getTaskById(@Param('id', {transform:(id) => Number(id)}) id: number): Task {
+    console.log({id});
+    
+const task = this.tasks.find(t => t.id=== id);
+console.log({task});
+return task
+
+  }
+}
