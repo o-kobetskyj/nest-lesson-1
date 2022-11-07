@@ -1,6 +1,12 @@
 1) Створити модулі, поєднати їх між собою
-2)
 
+
+
+  - [Шпаргалка Bash 1](https://tproger.ru/translations/bash-cheatsheet/)
+  - [Шпаргалка Bash 2](https://habr.com/ru/company/ruvds/blog/445270/)
+  
+  
+  
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
