@@ -1,13 +1,13 @@
 import { Body, Controller, Get, Header, HttpCode, Param, Post } from '@nestjs/common';
 import { log } from 'console';
 import { ITask } from './task.interface';
-import { TestService } from './test.service';
+import { TaskService } from './task.service';
 
 
 
 @Controller('task')
-export class TestController {
-  constructor(private testService: TestService) {
+export class TaskController {
+  constructor(private testService: TaskService) {
 
   }
 
